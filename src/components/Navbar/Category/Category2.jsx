@@ -14,7 +14,7 @@ const Category2 = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
 
           <div className="col-span-2 py-10 pl-5 bg-gradient-to-br from-gray-400/90 to-gray-100 text-white rounded-3xl relative h-[320px] flex items-end">
-            <div className="mb-4">
+            <div className="mb-4 z-10">
               <p>Play</p>
               <p className="text-2xl font-semibold">With</p>
               <p className="text-4xl font-bold opacity-60 mb-2">PS4</p>
@@ -25,8 +25,8 @@ const Category2 = () => {
             <img src={Image1} alt="ps4" className="w-[250px] absolute top-1/2 -translate-y-1/2 -right-0" />
           </div>
 
-          <div className="py-10 pl-5 bg-gradient-to-br from-brandBlue to-brandBlue/90 text-white rounded-3xl relative h-[320px] flex items-start">
-            <div className="mb-4">
+          <div className="py-10 pl-5 bg-gradient-to-br from-brandBlue to-brandBlue/90 text-white rounded-3xl relative  h-[320px] flex items-start">
+            <div className="mb-4 z-10">
               <p>Listen</p>
               <p className="text-2xl font-semibold">with</p>
               <p className="text-4xl font-bold opacity-40 mb-2">Speaker</p>

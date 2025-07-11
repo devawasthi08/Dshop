@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar/Navbar';
 import Hero from './components/Navbar/Hero/Hero';
 import Category from './components/Navbar/Category/Category';
@@ -12,6 +12,24 @@ import CategoryProducts from './components/Navbar/Products/CategoryProducts';
 import Footer from './components/Navbar/Footer/Footer';
 import headphone from "./assets/headphone.png";
 import smartwatch2 from "./assets/smartwatch2-removebg-preview.png";
+
+const ScrollToHashElement = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      const el = document.getElementById(id);
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, [location]);
+
+  return null;
+};
 
 const App = () => {
   const [user, setUser] = useState("");
@@ -45,6 +63,7 @@ const App = () => {
 
   return (
     <Router>
+      <ScrollToHashElement />
       <div className='bg-white dark:bg-gray-900 dark:text-white duration-200 overflow-hidden'>
         <Navbar user={user} setUser={setUser} />
         <Routes>

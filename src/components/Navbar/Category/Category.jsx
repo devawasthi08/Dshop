@@ -23,7 +23,7 @@ const Category = () => {
       text="Browse"
       bgColor="bg-white"
       textColor="text-primary"
-      onClick={() => navigate("/products/")}
+      onClick={() => navigate("/products/women's clothing")}
     />
   </div>
   <img
@@ -36,17 +36,26 @@ const Category = () => {
 
 
 
-          <div className="py-10 pl-5 bg-gradient-to-br from-brandYellow to-brandYellow/90 text-white rounded-3xl relative h-[320px] flex items-end">
-            <div className="mb-4">
-              <p>Track</p>
-              <p className="text-2xl font-semibold">your</p>
-              <p className="text-4xl font-bold opacity-60 mb-2">Watch</p>
-              <button onClick={() => navigate("/products/electronics")}>
-                <Button text="Browse" bgColor="bg-white" textColor="text-brandYellow" />
-              </button>
-            </div>
-            <img src={Image3} alt="watch" className="w-[320px] absolute -right-20 lg:top-[40px]" />
-          </div>
+          <div className="py-10 pl-5 bg-gradient-to-br from-brandYellow to-brandYellow/90 text-white rounded-3xl relative h-[320px] flex items-end overflow-hidden">
+  <div className="mb-4 z-10 relative">
+    <p>Track</p>
+    <p className="text-2xl font-semibold">your</p>
+    <p className="text-4xl font-bold opacity-60 mb-2">Watch</p>
+    <Button
+      text="Browse"
+      bgColor="bg-white"
+      textColor="text-brandYellow"
+      onClick={() => navigate("/products/electronics")}
+    />
+  </div>
+
+ 
+  <img
+    src={Image3}
+    alt="watch"
+    className="absolute bottom-0 right-2 w-28 sm:w-32 md:w-40 lg:w-48 object-contain z-0"
+  />
+</div>
 
           <div className="col-span-2 py-10 pl-5 bg-gradient-to-br from-primary to-primary/90 text-white rounded-3xl relative h-[320px] flex items-end">
             <div className="mb-4">
