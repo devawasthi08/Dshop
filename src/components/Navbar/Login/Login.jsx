@@ -12,7 +12,7 @@ const Login = ({ setUser }) => {
 
   return (
     <div className="p-4 max-w-sm mx-auto mt-10 bg-white dark:bg-gray-800 shadow rounded">
-      <input1
+      <input
         type="text"
         placeholder="Enter your name"
         value={name}

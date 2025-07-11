@@ -13,7 +13,6 @@ import Footer from './components/Navbar/Footer/Footer';
 import headphone from "./assets/headphone.png";
 import smartwatch2 from "./assets/smartwatch2-removebg-preview.png";
 
-
 const App = () => {
   const [user, setUser] = useState("");
 
@@ -47,10 +46,13 @@ const App = () => {
   return (
     <Router>
       <div className='bg-white dark:bg-gray-900 dark:text-white duration-200 overflow-hidden'>
-        <Navbar user={user} />
+        <Navbar user={user} setUser={setUser} />
         <Routes>
           {!user ? (
-            <Route path="*" element={<Login setUser={setUser} />} />
+            <>
+              <Route path="/login" element={<Login setUser={setUser} />} />
+              <Route path="*" element={<Login setUser={setUser} />} />
+            </>
           ) : (
             <>
               <Route
