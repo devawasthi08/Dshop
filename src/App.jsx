@@ -13,7 +13,7 @@ import Footer from './components/Navbar/Footer/Footer';
 
 import headphone from "./assets/headphone.png";
 import smartwatch2 from "./assets/smartwatch2-removebg-preview.png";
-import DarkMode from './components/Navbar/Navbar/DarkMode';
+
 
 const App = () => {
   const [user, setUser] = useState("");
