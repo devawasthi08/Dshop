@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar/Navbar';
-import Hero from './components/Navbar/hero/hero';
+import Hero from './components/Navbar/Hero/Hero';
 import Category from './components/Navbar/Category/Category';
 import Category2 from './components/Navbar/Category/Category2';
 import Services from './components/Navbar/Services/Services';
