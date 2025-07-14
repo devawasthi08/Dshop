@@ -10,10 +10,11 @@ import Banner from './components/Navbar/Banner/Banner';
 import Products from './components/Navbar/Products/Products';
 import CategoryProducts from './components/Navbar/Products/CategoryProducts';
 import Footer from './components/Navbar/Footer/Footer';
-import Cart from './components/Navbar/CartContext/Cart';
+import Cart from './components/Navbar/CartContext/CartPage';
 import { CartProvider } from './components/Navbar/CartContext/CartContext'; 
 import headphone from "./assets/headphone.png";
 import smartwatch2 from "./assets/smartwatch2-removebg-preview.png";
+import CartPage from './components/Navbar/CartContext/CartPage';
 
 const ScrollToHashElement = () => {
   const location = useLocation();
@@ -92,7 +93,7 @@ const App = () => {
                     </>
                   }
                 />
-                <Route path="/cart" element={<Cart />} />
+                <Route path="/cart" element={<CartPage />} />
                 <Route path="/products/:category" element={<CategoryProducts />} />
               </>
             )}
