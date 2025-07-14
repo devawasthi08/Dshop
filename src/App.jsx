@@ -10,6 +10,8 @@ import Banner from './components/Navbar/Banner/Banner';
 import Products from './components/Navbar/Products/Products';
 import CategoryProducts from './components/Navbar/Products/CategoryProducts';
 import Footer from './components/Navbar/Footer/Footer';
+import Cart from './components/Navbar/CartContext/Cart';
+import { CartProvider } from './components/Navbar/CartContext/CartContext'; 
 import headphone from "./assets/headphone.png";
 import smartwatch2 from "./assets/smartwatch2-removebg-preview.png";
 
@@ -62,39 +64,42 @@ const App = () => {
   };
 
   return (
-    <Router>
-      <ScrollToHashElement />
-      <div className='bg-white dark:bg-gray-900 dark:text-white duration-200 overflow-hidden'>
-        <Navbar user={user} setUser={setUser} />
-        <Routes>
-          {!user ? (
-            <>
-              <Route path="/login" element={<Login setUser={setUser} />} />
-              <Route path="*" element={<Login setUser={setUser} />} />
-            </>
-          ) : (
-            <>
-              <Route
-                path="/"
-                element={
-                  <>
-                    <Hero />
-                    <Category />
-                    <Category2 />
-                    <Services />
-                    <Banner data={BannerData} />
-                    <Products />
-                    <Banner data={BannerData2} />
-                    <Footer />
-                  </>
-                }
-              />
-              <Route path="/products/:category" element={<CategoryProducts />} />
-            </>
-          )}
-        </Routes>
-      </div>
-    </Router>
+    <CartProvider> 
+      <Router>
+        <ScrollToHashElement />
+        <div className='bg-white dark:bg-gray-900 dark:text-white duration-200 overflow-hidden'>
+          <Navbar user={user} setUser={setUser} />
+          <Routes>
+            {!user ? (
+              <>
+                <Route path="/login" element={<Login setUser={setUser} />} />
+                <Route path="*" element={<Login setUser={setUser} />} />
+              </>
+            ) : (
+              <>
+                <Route
+                  path="/"
+                  element={
+                    <>
+                      <Hero />
+                      <Category />
+                      <Category2 />
+                      <Services />
+                      <Banner data={BannerData} />
+                      <Products />
+                      <Banner data={BannerData2} />
+                      <Footer />
+                    </>
+                  }
+                />
+                <Route path="/cart" element={<Cart />} />
+                <Route path="/products/:category" element={<CategoryProducts />} />
+              </>
+            )}
+          </Routes>
+        </div>
+      </Router>
+    </CartProvider>
   );
 };
 

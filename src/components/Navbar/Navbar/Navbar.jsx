@@ -4,6 +4,8 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { IoMdSearch } from "react-icons/io";
 import { FaCaretDown, FaCartShopping } from "react-icons/fa6";
 import DarkMode from './DarkMode';
+import { useCart } from '../CartContext/CartContext';
+
 
 const MenuLinks = [
   { id: 1, name: "Home", link: "home" },
@@ -23,6 +25,7 @@ const Navbar = ({ user }) => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  const { cartItems } = useCart(); // ✅ useCart hook
 
   const handleLogout = () => {
     localStorage.removeItem("userName");
@@ -114,9 +117,15 @@ const Navbar = ({ user }) => {
               <div className='sm:hidden'>
                 <IoMdSearch className='text-xl text-gray-600 dark:text-gray-400' />
               </div>
+
+              {/* 🛒 Cart Button with item count */}
               <button className='relative p-3'>
                 <FaCartShopping className='text-xl text-gray-600 dark:text-gray-400' />
-                <div className='w-4 h-4 bg-red-500 text-white rounded-full absolute top-0 right-0 flex items-center justify-center text-xs'></div>
+                {cartItems.length > 0 && (
+                  <div className='w-4 h-4 bg-red-500 text-white rounded-full absolute top-0 right-0 flex items-center justify-center text-xs'>
+                    {cartItems.length}
+                  </div>
+                )}
               </button>
 
               {user && (
