@@ -18,12 +18,12 @@ const Category = () => {
   <div className="mb-4 z-10 relative">
     <p>Enjoy</p>
     <p className="text-2xl font-semibold">with</p>
-    <p className="text-4xl font-bold opacity-40 mb-2">Earphones</p>
+    <p className="text-4xl font-bold opacity-60 mb-2">Earphones /Electronics</p>
     <Button
       text="Browse"
       bgColor="bg-white"
       textColor="text-primary"
-      onClick={() => navigate("/products/women's clothing")}
+      onClick={() => navigate("/products/electronics")}
     />
   </div>
   <img
@@ -40,12 +40,12 @@ const Category = () => {
   <div className="mb-4 z-10 relative">
     <p>Track</p>
     <p className="text-2xl font-semibold">your</p>
-    <p className="text-4xl font-bold opacity-60 mb-2">Watch</p>
+    <p className="text-4xl font-bold opacity-80 mb-2">Watch /jewelery</p>
     <Button
       text="Browse"
       bgColor="bg-white"
       textColor="text-brandYellow"
-      onClick={() => navigate("/products/electronics")}
+      onClick={() => navigate("/products/jewelery")}
     />
   </div>
 
@@ -61,7 +61,7 @@ const Category = () => {
             <div className="mb-4">
               <p>Work</p>
               <p className="text-2xl font-semibold">on</p>
-              <p className="text-4xl font-bold opacity-60 mb-2">Macbook</p>
+              <p className="text-4xl font-bold opacity-80 mb-2">Macbook/Men Clothes</p>
               <button onClick={() => navigate("/products/men's clothing")}>
                 <Button text="Browse" bgColor="bg-white" textColor="text-primary" />
               </button>
@@ -72,7 +72,7 @@ const Category = () => {
         </div>
       </div>
     </div>
-    </section>
+    </section> 
   );
 };
 

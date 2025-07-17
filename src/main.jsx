@@ -10,9 +10,9 @@ import { CartProvider } from './components/Navbar/CartContext/CartContext.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-  
+   <CartProvider>
       <App />
-  
+  </CartProvider>
    
   </StrictMode>,
 )

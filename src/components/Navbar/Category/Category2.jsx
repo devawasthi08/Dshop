@@ -17,8 +17,8 @@ const Category2 = () => {
             <div className="mb-4 z-10">
               <p>Play</p>
               <p className="text-2xl font-semibold">With</p>
-              <p className="text-4xl font-bold opacity-60 mb-2">PS4</p>
-              <button onClick={() => navigate("/products/men's clothing")}>
+              <p className="text-4xl font-bold opacity-80 mb-2">PS4/Women Clothes</p>
+              <button onClick={() => navigate("/products/women's clothing")}>
                 <Button text="Browse" bgColor="bg-white" textColor="text-primary" />
               </button>
             </div>
@@ -29,8 +29,8 @@ const Category2 = () => {
             <div className="mb-4 z-10">
               <p>Listen</p>
               <p className="text-2xl font-semibold">with</p>
-              <p className="text-4xl font-bold opacity-40 mb-2">Speaker</p>
-              <button onClick={() => navigate("/products/women's clothing")}>
+              <p className="text-4xl font-bold opacity-80 mb-2">Speaker /Electronic</p>
+              <button onClick={() => navigate("/products/electronic")}>
                 <Button text="Browse" bgColor="bg-white" textColor="text-brandBlue" />
               </button>
             </div>
@@ -41,12 +41,12 @@ const Category2 = () => {
   <div className="mb-4 z-10 relative">
     <p>Experience</p>
     <p className="text-2xl font-semibold">Real</p>
-    <p className="text-4xl font-bold opacity-60 mb-2">VR</p>
+    <p className="text-4xl font-bold opacity-80 mb-2">VR/Jewelery</p>
     <Button
       text="Browse"
       bgColor="bg-white"
       textColor="text-brandGreen"
-      onClick={() => navigate("/products/men's clothing")}
+      onClick={() => navigate("/products/jewelery")}
     />
   </div>
   <img
