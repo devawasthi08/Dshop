@@ -30,7 +30,7 @@ const Category2 = () => {
               <p>Listen</p>
               <p className="text-2xl font-semibold">with</p>
               <p className="text-4xl font-bold opacity-80 mb-2">Speaker /Electronic</p>
-              <button onClick={() => navigate("/products/electronic")}>
+              <button onClick={() => navigate("/products/electronics")}>
                 <Button text="Browse" bgColor="bg-white" textColor="text-brandBlue" />
               </button>
             </div>
