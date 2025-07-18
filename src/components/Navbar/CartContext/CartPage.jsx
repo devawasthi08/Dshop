@@ -18,7 +18,7 @@ const CartPage = () => {
               className="flex items-center justify-between border-b pb-4"
             >
               <div className="flex items-center gap-4">
-                <img src={item.img} alt={item.title} className="w-20 h-20 object-cover rounded" />
+                <img src={item.img||item.image} alt={item.title} className="w-20 h-20 object-cover rounded" />
                 <div>
                   <h2 className="font-semibold text-lg">{item.title}</h2>
                   <p>Quantity: {item.quantity}</p>
