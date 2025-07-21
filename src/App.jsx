@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar/Navbar';
-import Hero from './components/Navbar/Hero/Hero';
 import Category from './components/Navbar/Category/Category';
 import Category2 from './components/Navbar/Category/Category2';
 import Services from './components/Navbar/Services/Services';
@@ -15,6 +14,8 @@ import { CartProvider } from './components/Navbar/CartContext/CartContext';
 import headphone from "./assets/headphone.png";
 import smartwatch2 from "./assets/smartwatch2-removebg-preview.png";
 import CartPage from './components/Navbar/CartContext/CartPage';
+import Hero from './components/Navbar/Hero/Hero';
+
 
 const ScrollToHashElement = () => {
   const location = useLocation();
@@ -82,7 +83,7 @@ const App = () => {
                   path="/"
                   element={
                     <>
-                      <Hero />
+                      <Hero/>
                       <Category />
                       <Category2 />
                       <Services />

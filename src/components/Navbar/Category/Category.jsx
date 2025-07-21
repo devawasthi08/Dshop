@@ -47,7 +47,7 @@ const Category = () => {
             <img
               src={Image3}
               alt="watch"
-              className="absolute bottom-0 right-2 w-24 sm:w-32 md:w-40 lg:w-48 object-contain z-0"
+              className="absolute top-1/2 -translate-y-1/2 right-2 sm:right-6 w-40 sm:w-56 md:w-64 object-contain z-0"
             />
           </div>
 

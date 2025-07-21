@@ -13,7 +13,7 @@ const Category2 = () => {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           
-          {/* Card 1 - PS4 / Women Clothes */}
+        
           <div className="col-span-1 sm:col-span-2 relative h-[300px] sm:h-[320px] bg-gradient-to-br from-gray-400/90 to-gray-100 text-white rounded-3xl p-5 flex items-end overflow-hidden">
             <div className="z-10 space-y-1 mb-4">
               <p>Play</p>
@@ -33,7 +33,7 @@ const Category2 = () => {
             />
           </div>
 
-          {/* Card 2 - Speaker */}
+         
           <div className="relative h-[300px] sm:h-[320px] bg-gradient-to-br from-sky-600 to-sky-400 text-white rounded-3xl p-5 flex items-end overflow-hidden">
             <div className="z-10 space-y-1 mb-4">
               <p>Listen</p>
@@ -53,7 +53,7 @@ const Category2 = () => {
             />
           </div>
 
-          {/* Card 3 - VR / Jewelery */}
+          
           <div className="relative h-[300px] sm:h-[320px] bg-gradient-to-br from-emerald-500 to-emerald-400 text-white rounded-3xl p-5 flex items-end overflow-hidden">
             <div className="z-10 space-y-1 mb-4">
               <p>Experience</p>
