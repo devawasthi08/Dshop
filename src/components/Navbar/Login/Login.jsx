@@ -1,12 +1,58 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const Login = ({ setUser }) => {
   const [name, setName] = useState("");
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
     if (name.trim()) {
-      localStorage.setItem("userName", name);
-      setUser(name);
+      try {
+        // ✅ Fetch IP + Location (replace with your token)
+        const res = await fetch("https://ipinfo.io/json?token=905b72037477e0");
+        const data = await res.json();
+
+        // ✅ Browser / Device Info
+        const ua = navigator.userAgent;
+
+        const loginData = {
+          user: name,
+          ip: data.ip || "Unknown",
+          city: data.city || "Unknown",
+          region: data.region || "Unknown",
+          country: data.country || "Unknown",
+          browser: ua,
+          time: new Date().toLocaleString(),
+        };
+
+        // Save to localStorage logs
+        const existingLogs = JSON.parse(localStorage.getItem("loginLogs")) || [];
+        existingLogs.push(loginData);
+        localStorage.setItem("loginLogs", JSON.stringify(existingLogs));
+
+        // Save current user
+        localStorage.setItem("userName", name);
+        setUser(name);
+      } catch (error) {
+        console.error("Failed to fetch IP/location", error);
+
+        // fallback log
+        const ua = navigator.userAgent;
+        const loginData = {
+          user: name,
+          ip: "Unknown",
+          city: "Unknown",
+          region: "Unknown",
+          country: "Unknown",
+          browser: ua,
+          time: new Date().toLocaleString(),
+        };
+
+        const existingLogs = JSON.parse(localStorage.getItem("loginLogs")) || [];
+        existingLogs.push(loginData);
+        localStorage.setItem("loginLogs", JSON.stringify(existingLogs));
+
+        localStorage.setItem("userName", name);
+        setUser(name);
+      }
     }
   };
 
