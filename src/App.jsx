@@ -16,7 +16,7 @@ import smartwatch2 from "./assets/smartwatch2-removebg-preview.png";
 import Hero from './components/Navbar/Hero/Hero';
 
 // ✅ Import new Logs page
-import Logs from './components/Logs';
+import Logs from './components/logs.jsx';
 
 const ScrollToHashElement = () => {
   const location = useLocation();
