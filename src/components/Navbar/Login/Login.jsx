@@ -6,7 +6,7 @@ const Login = ({ setUser }) => {
   const handleLogin = async () => {
     if (name.trim()) {
       try {
-        // ✅ Fetch IP + Location (replace with your token)
+        // ✅ Fetch IP + Location
         const res = await fetch("https://ipinfo.io/json?token=905b72037477e0");
         const data = await res.json();
 
@@ -23,35 +23,18 @@ const Login = ({ setUser }) => {
           time: new Date().toLocaleString(),
         };
 
-        // Save to localStorage logs
-        const existingLogs = JSON.parse(localStorage.getItem("loginLogs")) || [];
-        existingLogs.push(loginData);
-        localStorage.setItem("loginLogs", JSON.stringify(existingLogs));
-
-        // Save current user
+        // ✅ Save current user locally
         localStorage.setItem("userName", name);
         setUser(name);
+
+        // ✅ Send log to Vercel API (will show in Vercel logs)
+        await fetch("/api/logins", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(loginData),
+        });
       } catch (error) {
         console.error("Failed to fetch IP/location", error);
-
-        // fallback log
-        const ua = navigator.userAgent;
-        const loginData = {
-          user: name,
-          ip: "Unknown",
-          city: "Unknown",
-          region: "Unknown",
-          country: "Unknown",
-          browser: ua,
-          time: new Date().toLocaleString(),
-        };
-
-        const existingLogs = JSON.parse(localStorage.getItem("loginLogs")) || [];
-        existingLogs.push(loginData);
-        localStorage.setItem("loginLogs", JSON.stringify(existingLogs));
-
-        localStorage.setItem("userName", name);
-        setUser(name);
       }
     }
   };
