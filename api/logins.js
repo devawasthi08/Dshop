@@ -1,9 +1,8 @@
-
 export default async function handler(req, res) {
   if (req.method === "POST") {
     const log = req.body;
 
-    // This will show up in Vercel → Dashboard → Functions → Logs
+    // 🟢 Shows in Vercel Dashboard → Functions → Logs
     console.log("🟢 Login Log:", log);
 
     return res.status(200).json({ success: true });
